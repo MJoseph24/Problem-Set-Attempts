@@ -1,0 +1,48 @@
+//#1
+let randomNum = Math.random();
+if (randomNum % 7 === 0 && randomNum % 9 === 0) {
+ console.log('success');
+} else {
+ console.log('failure');
+}
+
+//#2
+let grade = Math.random() * 100;
+console.log(grade);
+grade = grade >= 90 && grade <= 100 ? grade = 'A' : grade >= 80 && grade < 90 ? grade = 'B' : grade >= 70 && grade < 80 ? grade = 'C' : grade = 'D';
+console.log(grade);
+
+//#3
+function arithmetic(p1, p2) {
+  return p1 + p2;
+}
+const sum1 = arithmetic(20, 20);
+console.log(sum1);
+
+//#4
+let arithmetic = (p1, p2) => p1 + p2;
+const sum1 = arithmetic(20, 20);
+console.log(sum1);
+
+//#5
+const colors = ["blue", "orange", "yellow", "green", "violet", "indigo", "red", "purple", "pink", "black", "gray", "white", "maroon", "brown", "turqoise"];
+console.log (colors.length);
+console.log (colors[0]);
+console.log(colors[14]);
+console.log(colors[Math.floor(Math.random() * colors.length)]);
+colors.sort();
+colors.push("teal");
+colors.push(2);
+
+//#6 -- haven't completed this one/got stuck through process
+Array.from({length: 59}, () => Math.floor(Math.random() * 59) + 29);
+function maxDistance(array, n) {
+let index = new Map();
+let greatestDist = 0;
+for (let i = 0; i < n; i++) {
+if (!index.has(array[i])) {
+} else {
+greatestDist = Math.max(greatestDist, i - index.get(array[i]));
+}
+return greatestDist;
+}
