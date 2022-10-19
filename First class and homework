@@ -140,4 +140,42 @@ return [this.meal, this.time, this.size];
 var firstMeal = new Meal('breakfast');
 console.log(firstMeal.toString());
 
-//#2
+//#12
+class Meal {
+constructor(meal, time, size) {
+this.meal = meal;
+this.time = time;
+this.size = size;
+}
+toString() {
+return [this.meal, this.time, this.size];
+}
+}
+var firstMeal = new Meal('breakfast');
+const array = [];
+array.push(new Meal('lunch', 11, 'big'));
+array.push(new Meal('dinner', 6, 'small'));
+array.push(new Meal('snack', 4, 'tiny'));
+array.push(new Meal('supper', 5, 'medium'));
+array.push(new Meal('midnight', 12, 'huge'));
+array.push(new Meal('late night', 1, 'sufficient'));
+array.push(new Meal('early morning', 4, 'light'));
+array.push(new Meal('recess', 10, 'quick'));
+array.push(new Meal('afternoon', 3, 'sweet'));
+array.push(new Meal('in-class', 8, 'unnoticeable'));
+let newArray = array.filter((par) => typeof (par === 'string' && par.length > 3));
+let secondArray = array.map(x => typeof (x === 'number'));
+secondArray.forEach(x => x + 2);
+//custom sort
+for(let i = 0; i < secondArray.length; i++) {
+for(let j = i + 1; j < secondArray.length; j++) {
+if(secondArray[i] > secondArray[j]) {
+let one = secondArray[i];
+secondArray[i] = secondArray[j];
+secondArray[j] = one;
+}
+}
+}
+for (let i = 0; i < secondArray.length; i++) {
+console.log(secondArray[i]);
+}
