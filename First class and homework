@@ -106,3 +106,38 @@ const newNewNumbers = newNumbers.reduce((x, y) => x + y)
 console.log(newNewNumbers);
 
 //#10
+let numbers = Array.from({length: 59}, () => Math.floor(Math.random() * 59) + 29);
+const firstMap = numbers.map(x => x * x);
+for(let i = 0; i < firstMap.length; i++) {
+for(let j = i + 1; j < firstMap.length; j++) {
+if(firstMap[i] > firstMap[j]) {
+let one = firstMap[i];
+firstMap[i] = firstMap[j];
+firstMap[j] = one;
+}
+}
+}
+greatestNum = firstMap[firstMap.length - 1];
+const newNumbers = firstMap.filter(int => int > (greatestNum / 2));
+const newNewNumbers = newNumbers.reduce((x, y) => x + y)
+let counter = 0;
+newNumbers.forEach(int => {
+console.log(counter + ' ' + '[' + int + ']')
+counter++;
+})
+
+//#11
+class Meal {
+constructor(meal) {
+this.meal = meal;
+this.time = 9;
+this.size = 'big';
+}
+toString() {
+return [this.meal, this.time, this.size];
+}
+}
+var firstMeal = new Meal('breakfast');
+console.log(firstMeal.toString());
+
+//#2
